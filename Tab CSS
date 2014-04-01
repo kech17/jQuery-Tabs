@@ -1,0 +1,6 @@
+
+#tabs {border-bottom:1px solid #ccc;height:33px;margin:0 0 10px;padding-top:5px;background:#eee;}
+    #tabs a {float:left;margin-left:2px;border-radius:3px 3px 0 0;border:1px solid #eee;border-bottom-color:#ccc;color:#08c;height:32px;line-height:32px;padding:0 12px;text-decoration:none;}
+    #tabs a:hover {background:#ddd;color:#058;border-color:#ddd #ddd #ccc;}
+    #tabs a.active {background:#fff;color:#555;border-color:#ccc #ccc #fff;}
+    #tabs a.active:hover {background:#fff;color:#555;border-color:#ccc #ccc #fff;}
