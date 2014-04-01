@@ -1,0 +1,59 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="jquery-1.4.min.js" ></script>
+
+
+
+<script>
+    
+    $(document).ready(function() {
+        initiatePage()
+    });
+function initiatePage() {
+    var array = getYears();
+    for (var i=0;i < array.length;i++) {
+        addTab(array[i]);
+     } tabClick(0);
+    }
+    
+
+function tabClick(x) {
+    showAll();
+    showOnly(x+2012);
+}
+
+function addTab(name) {
+    var num = name-2012;
+    $("#tabs").append("<a href='#' onclick='tabClick("+num+");'>" +name+"</a>");
+}
+function getYears(className) {
+        var text = [];
+        var temp = "."+className;
+        $("temp").each(function(){
+        text.push( $(this).text().trim()); });  
+        var year;
+        var yeararr=[];
+        jQuery.each(text, function(index, value)    {
+            year=value.substring(value.length-5,value.length-1);
+            if (jQuery.inArray(parseInt(year), yeararr) == -1)	{
+                yeararr.push(parseInt(year));
+           }});
+       return yeararr.sort(descending);
+        
+}
+function descending( a, b ) {    
+        return b - a;}
+    
+function showAll() {
+    $(".grid-item").each(function(a,obj) {
+        $(obj).show();
+    });
+   }
+function showOnly(year) {
+            $(".grid-item").each(function(a,obj) {
+                temp=$(obj).html();
+                if (temp.indexOf(year.toString()+")") == -1) {
+                    $(obj).hide();
+                 }
+            });
+        }
+</script>
